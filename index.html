@@ -61,6 +61,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-在linux系统部署web项目" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/15/在linux系统部署web项目/" class="article-date">
+  <time datetime="2018-01-15T02:46:39.000Z" itemprop="datePublished">2018-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/15/在linux系统部署web项目/">在linux系统部署web项目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在linux系统上部署web项目<br>一．在linux系统上安装tomcat<br>1.下载tomcat<br>1.1进入 Apache Tomcat官网，选择要下载的版本。<br>1.2把tomcat安装包上传到服务器 /usr/local 下。</p>
+<p>2.解压安装tomcat<br>2.1用Xshell等Linux远程连接工具访问服务器，进入文件夹，指令是cd /usr/local。<br>2.2解压安装包，指令是unzip apache-tomcat-7.0.78.tar.gz。<br>2.3进入bin目录，指令是cd /usr/local/tapache-omcat-7-0-78/bin。<br>2.4启动tomcat，指令是sh startup.sh。<br>2.5在ogs下查看启动日志，指令是tail -f catalina.out，可以查看到tomcat的运行信息，如果看到INFO: Server startup in 1925 ms，表示tomcat已经启动成功了，按ctrl+c退出该日志。<br>2.6在浏览器输入服务器的IP+端口（默认8080），能看到如下页面，这是tomcat没有部署项目的默认页面。</p>
+<p>2.7停止运行tomcat，指令是sh shutdown.sh。</p>
+<p>二．在linux系统上搭建java环境<br>1.在Centos下使用yum安装java环境。<br>2.查看yum库的java安装包，指令是 yum -y list java*。</p>
+<p>3.选择合适的版本，使用yum安装。</p>
+<p>4.查看结果，指令是 java -version，如果有java版本就表示安装成功。</p>
+<p>三．在linux系统上安装nginx<br>1.下载nginx<br>1.1进入nginx官网，选择要下载的版本。<br>1.2把nginx安装包上传到服务器 /usr/local 目录下。<br>2.解压安装nginx<br>2.1解压安装之前，先检查是否安装pcre，如果没有，就用yum    安    装。命令是，yum -y install pcre  和 yum -y install pcre-devel。找    到    pcre位置，命令是 rpm -ql pcre 和 rpm -ql pcre-devel。<br>2.2解压nginx，命令是tar -zxvf nginx-1.10.2.tar.gz，进入    目    录，命令是，cd/usr/local/nginx-1-10-2，执行命令 ./configure。</p>
+<p>如果这一步出错了，根据错误提示信息解决问题后，使用 make     clean 命令，清除产生的临时文件，再来重新执行 ./configure<br>2.3编译和安装<br>执行命令，make 和 make install，到此安装完毕。<br>2.4修改nginx配置文件，命令是，vi /conf/nginx.conf。修改端口为80。<br>2.5启动nginx，命令是，./nginx -c。在浏览器里输入服务器ip或域名，如下图，表示成功。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/15/在linux系统部署web项目/" data-id="cjcftnq5700046kogh5jy7zd6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-myFile" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/15/myFile/" class="article-date">
@@ -86,11 +130,11 @@
         <p>Hexo个人微博搭建</p>
 <p>Hexo搭建分为以下几个步骤<br>1.搭建环境准备（包括node.js和git环境，gitHub账户的配置）<br>2.安装Hexo<br>3.配置Hexo<br>4.申请GitHub账号<br>5.申请外网域名（可用）<br>6.本地hexo与GitHub pages绑定</p>
 <p>1.1.1：<br>Node.js环境搭建步骤：<br>1）：下载Node.js安装文件：安装包分为32位与64位<br>2）：安装界面</p>
-<p>3）：打开CMD输入如下命名确认是否安装成功Node.js<br>1：node -v      2:npm -v</p>
+<p>3）：打开CMD输入如下命名确认是否安装成功Node.js<br>1：node -v<br>2:npm -v</p>
 <p>1:Git环境搭建<br>Git环境搭建步骤：<br>1）：下载Git安装包<br>2）：运行安装包如下</p>
 <p>Git安装界面</p>
 <p>Git PATH设置</p>
-<p>   3):检查是否安装成功,输入git –service如图则表示安装成功</p>
+<p>3):检查是否安装成功,输入git –service如图则表示安装成功</p>
 <p>1.1.3:<br>gitHub账号申请,环境搭建：<br>1):  输入<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a> 申请gitHub账号<br>2)：登陆之后，创建代码库，点击页面右上角的加号，选择New repository</p>
 <p>3）进入代码库创建页面:在Repository name下填写                   youname.github.io,Description(optional)下填写一些简单的    描述（不写也没关系）,如图所示</p>
 <p>注意:比如github名称是gdutxiaoxu,这里就填写    gdutxiaoxu.github.io.<br>4):代码库设置<br>接下来开启gh-pages功能，点击界面右侧的Settings，你将会打开这个库的setting页面，向下拖动，直到看见GitHub Pages，如图：</p>
@@ -117,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/15/myFile/" data-id="cj7ln57z700013oog3pvw13ms" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/15/myFile/" data-id="cjcftnq4h00036kogzrex9p8d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/14/helloword/" data-id="cj7ln57zg00023oogaqxvpm5s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/14/helloword/" data-id="cjcftnq3w00016kogawmec37r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/ZK/" data-id="cj7ln57yr00003oogqcohpn2t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/12/ZK/" data-id="cjcftnq3r00006kogftgc4n0e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -234,7 +278,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/hello-world/" data-id="cj7ln57zi00033oog2ukjj081" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/12/hello-world/" data-id="cjcftnq3z00026kog1to828uv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,7 +305,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
     </div>
   </div>
 
@@ -272,6 +316,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/15/在linux系统部署web项目/">在linux系统部署web项目</a>
+          </li>
         
           <li>
             <a href="/2017/09/15/myFile/">myFile</a>
@@ -301,7 +349,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
+      &copy; 2018 John Doe<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在linux系统部署web项目 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在linux系统上部署web项目一．在linux系统上安装tomcat1.下载tomcat1.1进入 Apache Tomcat官网，选择要下载的版本。1.2把tomcat安装包上传到服务器 /usr/local 下。 2.解压安装tomcat2.1用Xshell等Linux远程连接工具访问服务器，进入文件夹，指令是cd /usr/local。2.2解压安装包，指令是unzip apache-to">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在linux系统部署web项目">
+<meta property="og:url" content="http://yoursite.com/2018/01/15/在linux系统部署web项目/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在linux系统上部署web项目一．在linux系统上安装tomcat1.下载tomcat1.1进入 Apache Tomcat官网，选择要下载的版本。1.2把tomcat安装包上传到服务器 /usr/local 下。 2.解压安装tomcat2.1用Xshell等Linux远程连接工具访问服务器，进入文件夹，指令是cd /usr/local。2.2解压安装包，指令是unzip apache-to">
+<meta property="og:updated_time" content="2018-01-15T06:21:06.210Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在linux系统部署web项目">
+<meta name="twitter:description" content="在linux系统上部署web项目一．在linux系统上安装tomcat1.下载tomcat1.1进入 Apache Tomcat官网，选择要下载的版本。1.2把tomcat安装包上传到服务器 /usr/local 下。 2.解压安装tomcat2.1用Xshell等Linux远程连接工具访问服务器，进入文件夹，指令是cd /usr/local。2.2解压安装包，指令是unzip apache-to">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-在linux系统部署web项目" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/15/在linux系统部署web项目/" class="article-date">
+  <time datetime="2018-01-15T02:46:39.000Z" itemprop="datePublished">2018-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在linux系统部署web项目
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在linux系统上部署web项目<br>一．在linux系统上安装tomcat<br>1.下载tomcat<br>1.1进入 Apache Tomcat官网，选择要下载的版本。<br>1.2把tomcat安装包上传到服务器 /usr/local 下。</p>
+<p>2.解压安装tomcat<br>2.1用Xshell等Linux远程连接工具访问服务器，进入文件夹，指令是cd /usr/local。<br>2.2解压安装包，指令是unzip apache-tomcat-7.0.78.tar.gz。<br>2.3进入bin目录，指令是cd /usr/local/tapache-omcat-7-0-78/bin。<br>2.4启动tomcat，指令是sh startup.sh。<br>2.5在ogs下查看启动日志，指令是tail -f catalina.out，可以查看到tomcat的运行信息，如果看到INFO: Server startup in 1925 ms，表示tomcat已经启动成功了，按ctrl+c退出该日志。<br>2.6在浏览器输入服务器的IP+端口（默认8080），能看到如下页面，这是tomcat没有部署项目的默认页面。</p>
+<p>2.7停止运行tomcat，指令是sh shutdown.sh。</p>
+<p>二．在linux系统上搭建java环境<br>1.在Centos下使用yum安装java环境。<br>2.查看yum库的java安装包，指令是 yum -y list java*。</p>
+<p>3.选择合适的版本，使用yum安装。</p>
+<p>4.查看结果，指令是 java -version，如果有java版本就表示安装成功。</p>
+<p>三．在linux系统上安装nginx<br>1.下载nginx<br>1.1进入nginx官网，选择要下载的版本。<br>1.2把nginx安装包上传到服务器 /usr/local 目录下。<br>2.解压安装nginx<br>2.1解压安装之前，先检查是否安装pcre，如果没有，就用yum    安    装。命令是，yum -y install pcre  和 yum -y install pcre-devel。找    到    pcre位置，命令是 rpm -ql pcre 和 rpm -ql pcre-devel。<br>2.2解压nginx，命令是tar -zxvf nginx-1.10.2.tar.gz，进入    目    录，命令是，cd/usr/local/nginx-1-10-2，执行命令 ./configure。</p>
+<p>如果这一步出错了，根据错误提示信息解决问题后，使用 make     clean 命令，清除产生的临时文件，再来重新执行 ./configure<br>2.3编译和安装<br>执行命令，make 和 make install，到此安装完毕。<br>2.4修改nginx配置文件，命令是，vi /conf/nginx.conf。修改端口为80。<br>2.5启动nginx，命令是，./nginx -c。在浏览器里输入服务器ip或域名，如下图，表示成功。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/15/在linux系统部署web项目/" data-id="cjcftnq5700046kogh5jy7zd6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/15/myFile/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">myFile</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/15/在linux系统部署web项目/">在linux系统部署web项目</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/15/myFile/">myFile</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/14/helloword/">helloword</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/12/ZK/">ZK</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
